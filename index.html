@@ -60,5 +60,26 @@
 <div class="live-notification" id="liveNotification" aria-live="polite"><div class="live-icon"><i class="fa-solid fa-bag-shopping"></i></div><div><strong id="liveName"></strong><p id="liveText"></p><small id="liveTime"></small></div><button id="closeLive" aria-label="Tutup">×</button></div>
 <div class="modal" id="productModal"><div class="modal-box"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
 <script src="js/script.js"></script>
+
+<script>
+(function () {
+  function hidePageLoader() {
+    var loader = document.getElementById('page-loader');
+
+    if (loader) {
+      loader.classList.add('loader-hidden');
+
+      setTimeout(function () {
+        loader.style.display = 'none';
+      }, 600);
+    }
+  }
+
+  window.addEventListener('load', hidePageLoader);
+
+  setTimeout(hidePageLoader, 5000);
+})();
+</script>
+
 </body>
 </html>
