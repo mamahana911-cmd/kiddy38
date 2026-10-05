@@ -10,3 +10,62 @@
     object-fit: cover;
     display: block;
 }
+/* KIDDY38 PAGE LOADER */
+#page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #fff8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#page-loader img {
+    width: min(82vw, 420px);
+    height: auto;
+    display: block;
+    animation: kiddyLoaderLogo 1.8s ease-in-out infinite;
+}
+
+#page-loader p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8b4b55;
+}
+
+.loader-spinner {
+    width: 30px;
+    height: 30px;
+    margin-top: 12px;
+    border: 3px solid #f3d5da;
+    border-top-color: #d94f68;
+    border-radius: 50%;
+    animation: kiddyLoaderSpin 0.8s linear infinite;
+}
+
+#page-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@keyframes kiddyLoaderSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes kiddyLoaderLogo {
+    0%,
+    100% {
+        transform: scale(0.97);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
